@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IssueBlankScreen.LoginPage"
+             Title="LoginPage"
+             NavigationPage.HasNavigationBar="False"
+             Shell.NavBarIsVisible="False">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <StackLayout Padding="0" HorizontalOptions="Fill">
+            <Label Text="Login" FontAttributes="Bold"></Label>
+            <Entry x:Name="Username"
+                       Margin="0, 2, 0, 2"
+                       Text="{Binding Username, Mode=TwoWay}"
+                       Placeholder="username"
+                       FontAttributes="None"
+                       TextColor="{DynamicResource ColorBlack}"/>
+
+            <Label Text="Password" FontAttributes="Bold"></Label>
+            <Entry x:Name="Password" 
+                       Margin="0, 2, 0, 2"
+                       Text="{Binding Password, Mode=TwoWay}" 
+                       Placeholder="Pasword"
+                       TextColor="{DynamicResource ColorBlack}"
+                       FontAttributes="None"
+                       IsPassword="True"/>
+
+            <Button x:Name="LoginButton" Command="{Binding LoginCommand}"
+                        Text="Login"
+                        TextColor="White"
+                        BackgroundColor="{DynamicResource ColorAccent}"  
+                        FontAttributes="Bold"
+                        CornerRadius="30" 
+                        FontSize="Large">
+            </Button>
+
+            <Button Text="Select language"
+                        Command="{Binding ChangeLanguageCommand}"
+                        TextColor="{DynamicResource ColorAccent}" 
+                        BackgroundColor="Transparent"
+                        BorderColor="Transparent"></Button>
+
+        </StackLayout>
+
+        <Button Text="Settings" Grid.Row="1"
+                        Command="{Binding SettingCommand}"
+                        TextColor="{DynamicResource ColorAccent}" 
+                        BackgroundColor="Transparent"
+                        BorderColor="Transparent"></Button>
+
+        <ActivityIndicator Grid.RowSpan="2" IsVisible="false" 
+                               Background="White" 
+                               IsRunning="false"
+                               Color="{DynamicResource ColorAccent}"/>
+    </Grid>
+</ContentPage>

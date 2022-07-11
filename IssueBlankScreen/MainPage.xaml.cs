@@ -1,6 +1,6 @@
 ﻿namespace IssueBlankScreen;
 
-public partial class MainPage : ContentPage
+public partial class MainPage : Shell
 {
 	public MainPage()
 	{

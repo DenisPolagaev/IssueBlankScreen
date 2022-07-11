@@ -1,4 +1,7 @@
-﻿namespace IssueBlankScreen;
+﻿
+using IssueBlankScreen.ViewModels;
+
+namespace IssueBlankScreen;
 
 public partial class App : Application
 {
@@ -6,6 +9,6 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-		MainPage = new MainPage();
+		MainPage = new NavigationPage(new LoginPage() { BindingContext = new LoginViewModel()});
 	}
 }
